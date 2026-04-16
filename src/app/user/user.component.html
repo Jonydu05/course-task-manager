@@ -1,0 +1,6 @@
+<div>
+  <button (click)="selectedUser.emit()">
+    <img [src]="imgUrl()" [alt]="user().name" />
+    <span>{{ user().name }}</span>
+  </button>
+</div>

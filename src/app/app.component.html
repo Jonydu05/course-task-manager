@@ -1,1 +1,13 @@
+<app-header />
+
+<main>
+  <ul id="users">
+    @for (item of users(); track item.id) {
+      <li>
+        <app-user [user]="item" />
+      </li>
+    }
+  </ul>
+</main>
+
 <router-outlet />
