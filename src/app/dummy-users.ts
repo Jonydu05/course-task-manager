@@ -1,4 +1,6 @@
-export const DUMMY_USERS = [
+import { User } from './user.type';
+
+export const DUMMY_USERS: User[] = [
   {
     id: 'u1',
     name: 'Jasmine Washington',
@@ -30,3 +32,9 @@ export const DUMMY_USERS = [
     avatar: 'user-6.jpg',
   },
 ];
+
+export const USER_FALLBACK: User = {
+  id: '0',
+  name: 'User not found',
+  avatar: '',
+}

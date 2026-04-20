@@ -1,15 +1,23 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { UserComponent } from './user/user.component';
 import { DUMMY_USERS } from './dummy-users';
+import { HeaderComponent } from './header/header.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { User } from './user.type';
+import { UserComponent } from './user/user.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, UserComponent],
+  imports: [RouterOutlet, HeaderComponent, UserComponent, TasksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class App {
-  users = signal(DUMMY_USERS);
+  users = signal<User[]>(DUMMY_USERS);
+
+  selectedUser = signal<User | null>(null);
+
+  onSelectUser(event: User) {
+    this.selectedUser.set(event);
+  }
 }
