@@ -4,17 +4,17 @@
   <ul id="users">
     @for (item of users(); track item.id) {
       <li>
-        <app-user [user]="item" (selectedUser)="onSelectUser($event)" />
+        <app-user [user]="item" [selected]="item.id === selectedUser()?.id" (selectedUser)="onSelectUser($event)" />
       </li>
     } @empty {
-      <li id="fallback">
-        <span>Found 0 users.</span>
-      </li>
+      <li id="fallback"><span>Found 0 users.</span></li>
     }
   </ul>
 
   @if (selectedUser()) {
     <app-tasks [user]="selectedUser()!" />
+  } @else {
+    <p id="fallback">Select a user to see their tasks!</p>
   }
 </main>
 

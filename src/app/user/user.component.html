@@ -1,5 +1,5 @@
 <div>
-  <button (click)="selectedUser.emit(user())">
+  <button (click)="selectedUser.emit(user())" [class.active]="selected()">
     <img [src]="imgUrl()" [alt]="user().name" />
     <span>{{ user().name }}</span>
   </button>
