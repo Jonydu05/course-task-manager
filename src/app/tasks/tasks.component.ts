@@ -8,14 +8,12 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { User } from '../user/user.model';
-import { NewTaskComponent } from './new-task/new-task.component';
 import { TaskService } from './task.service';
-import { TaskComponent } from './task/task.component';
 import { NewTaskData, Task } from './task/task.model';
 
 @Component({
+  standalone: false,
   selector: 'app-tasks',
-  imports: [TaskComponent, NewTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

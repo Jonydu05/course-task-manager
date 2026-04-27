@@ -1,10 +1,10 @@
 import { Component, inject, output } from '@angular/core';
-import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { NewTaskData } from '../task/task.model';
 
 @Component({
   selector: 'app-new-task',
-  imports: [ReactiveFormsModule],
+  standalone: false,
   templateUrl: './new-task.component.html',
   styleUrl: './new-task.component.css',
 })
